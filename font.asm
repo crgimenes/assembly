@@ -7,11 +7,11 @@ start:
         ;mov  ax,0003h      ; set screen mode to normal
         ;int  10h           ; (80x25) text
 
-	    push ds		        ;
-    	pop es			    ; make sure ES = DS
+	    ;push ds		    ;
+    	;pop es			    ; make sure ES = DS
     	mov	bp,font         ;
 	    mov	cx,1			; change 1 bitmap
-    	mov	dx,0065			; A
+    	mov	dx,0041h		; A 41h = 65
 	    mov	bx,1000h		; bh 16 bl 00 -> 16 bytes per char RAM block 00
 	    mov	ax,1100h		; change font to our font
 	    int	10h			    ; video interrupt
