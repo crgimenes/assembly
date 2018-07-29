@@ -1,19 +1,19 @@
-;Connect to APM API
-MOV     AX,5301h
-XOR     BX,BX
-INT     15h
+;connect to apm api
+mov     ax, 5301h
+xor     bx, bx
+int     15h
 
-;Try to set APM version (to 1.2)
-MOV     AX,530Eh
-XOR     BX,BX
-MOV     CX,0102h
-INT     15h
+;try to set apm version (to 1.2)
+mov     ax, 530Eh
+xor     bx, bx
+mov     cx, 0102h
+int     15h
 
-;Turn off the system
-MOV     AX,5307h
-MOV     BX,0001h
-MOV     CX,0003h
-INT     15h
+;turn off the system
+mov     ax, 5307h
+mov     bx, 0001h
+mov     cx, 0003h
+int     15h
 
-;Exit (for good measure and in case of failure)
-RET
+;exit (for good measure and in case of failure)
+ret
